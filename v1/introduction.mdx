@@ -1,0 +1,50 @@
+---
+title: 'Introduction'
+description: 'Current V1 API Introduction'
+---
+
+<Note>
+  This ApI is intended only for internal developers of MC² Finance - and 
+</Note>
+
+## Welcome
+
+The V1 is fully developed in Rust, and comes with 3 WebSocket Interfaces
+<Card
+  title="V1 Architecture Overview"
+  icon="leaf"
+>
+ ![title](/images/v1-architecture.png)
+</Card>
+
+## Modules
+<CardGroup cols={2}>
+  <Card
+    title="v1.auth"
+    icon="palette"
+    href="auth"
+  >
+    The Auth API
+  </Card>
+  <Card
+    title="v1.user"
+    icon="code"
+    href="user"
+  >
+    common logged in user calls
+  </Card>
+  <Card
+    title="v1.admin"
+    icon="screwdriver-wrench"
+    href="admin"
+  >
+  calls for admin users
+  </Card>
+  <Card
+    title="v1.watcher"
+    icon="stars"
+    href="watcher"
+  >
+    receives blockchain transaction alerts and acts accordingly.
+  </Card>
+</CardGroup>

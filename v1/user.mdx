@@ -1,0 +1,1267 @@
+
+## user
+
+### UserFollowStrategy
+
+Code: 20040
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserListFollowedStrategies
+
+Code: 20050
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategies_total | BigInt |
+| strategies |  |
+
+### UserUnfollowStrategy
+
+Code: 20060
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserListStrategies
+
+Code: 20061
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+| strategy_name | Optional[String] |
+| expert_id | Optional[BigInt] |
+| expert_name | Optional[String] |
+| description | Optional[String] |
+| blockchain | Optional[block_chain] |
+| strategy_pool_address | Optional[BlockchainAddress] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategies_total | BigInt |
+| strategies |  |
+
+### UserListTopPerformingStrategies
+
+Code: 20063
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategies_total | BigInt |
+| strategies |  |
+
+### UserListStrategyBackers
+
+Code: 20064
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| backers_total | BigInt |
+| backers | DataTable[ListStrategyBackersRow] |
+
+### UserListStrategyFollowers
+
+Code: 20065
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| followers_total | BigInt |
+| followers | DataTable[ListStrategyFollowersRow] |
+
+### UserGetStrategy
+
+Code: 20062
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy |  |
+| watching_wallets | DataTable[WatchingWalletRow] |
+| strategy_pool_asset_updated_at | BigInt |
+| strategy_pool_asset_balances | DataTable[StrategyPoolAssetBalancesRow] |
+| strategy_pool_asset_ledger | DataTable[StrategyPoolAssetLedgerRow] |
+| audit_rules | DataTable[UserListStrategyAuditRulesRow] |
+| whitelisted_tokens |  |
+
+### UserListStrategyPoolContractAssetLedger
+
+Code: 20066
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| blockchain | block_chain |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_pool_contract_asset_ledger | DataTable[StrategyPoolContractAssetLedgerRow] |
+
+### UserListUserStrategyPoolContractAssetLedger
+
+Code: 20067
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| user_id | BigInt |
+| strategy_id | BigInt |
+| blockchain | block_chain |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| user_strategy_pool_contract_asset_ledger | DataTable[UserStrategyPoolContractAssetLedgerRow] |
+
+### UserGetStrategyStatistics
+
+Code: 20070
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| net_value | DataTable[NetValuePoint] |
+| follow_ledger | DataTable[FollowLedgerPoint] |
+| back_ledger | DataTable[BackLedgerPoint] |
+
+### UserGetStrategiesStatistics
+
+Code: 20071
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| tracking_amount_usd | Numeric |
+| backing_amount_usd | Numeric |
+| difference_amount_usd | Numeric |
+| aum_value_usd | Numeric |
+| current_value_usd | Numeric |
+| withdrawable_value_usd | Numeric |
+| strategy_pool_tokens | DataTable[UserGetStrategiesStatisticsStrategyPoolToken] |
+| aum_list_history | DataTable[UserGetStrategiesStatisticsAumListHistory] |
+
+### UserUpdateUserProfile
+
+Code: 20172
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| username | Optional[String] |
+| family_name | Optional[String] |
+| given_name | Optional[String] |
+| description | Optional[String] |
+| social_media | Optional[String] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### UserBackStrategy
+
+Code: 20080
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| quantity | BlockchainDecimal |
+| token_id | BigInt |
+| strategy_wallet | Optional[BlockchainAddress] |
+| nonce | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### UserExitStrategy
+
+Code: 20110
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| quantity | BlockchainDecimal |
+| blockchain | block_chain |
+| nonce | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+| transaction_hash | BlockchainTransactionHash |
+
+### UserRequestRefund
+
+Code: 20081
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| quantity | BlockchainDecimal |
+| wallet_address | BlockchainAddress |
+| blockchain | block_chain |
+| nonce | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserListBackedStrategies
+
+Code: 20090
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategies_total | BigInt |
+| strategies |  |
+
+### UserListBackStrategyLedger
+
+Code: 20100
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| back_ledger_total | BigInt |
+| back_ledger | DataTable[BackStrategyLedgerRow] |
+
+### ExpertListBackStrategyLedger
+
+Code: 20101
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| back_ledger_total | BigInt |
+| back_ledger | DataTable[BackStrategyLedgerRow] |
+
+### UserListExitStrategyLedger
+
+Code: 20120
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | Optional[BigInt] |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| exit_ledger_total | BigInt |
+| exit_ledger | DataTable[ExitStrategyLedgerRow] |
+
+### ExpertListExitStrategyLedger
+
+Code: 20121
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | Optional[BigInt] |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| exit_ledger_total | BigInt |
+| exit_ledger | DataTable[ExitStrategyLedgerRow] |
+
+### UserFollowExpert
+
+Code: 20130
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| expert_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserListFollowedExperts
+
+Code: 20140
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| experts_total | BigInt |
+| experts |  |
+
+### UserUnfollowExpert
+
+Code: 20150
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| expert_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserListExperts
+
+Code: 20160
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| expert_id | Optional[BigInt] |
+| user_id | Optional[BigInt] |
+| user_public_id | Optional[BigInt] |
+| username | Optional[String] |
+| family_name | Optional[String] |
+| given_name | Optional[String] |
+| description | Optional[String] |
+| social_media | Optional[String] |
+| sort_by_followers | Optional[Boolean] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| experts_total | BigInt |
+| experts |  |
+
+### UserListTopPerformingExperts
+
+Code: 20161
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| experts_total | BigInt |
+| experts |  |
+
+### UserListFeaturedExperts
+
+Code: 20162
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| experts_total | BigInt |
+| experts |  |
+
+### UserListExpertListenedWalletTradeLedger
+
+Code: 20163
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| expert_listened_wallet_trade_ledger | DataTable[ExpertListenedWalletTradeLedgerRow] |
+
+### UserGetExpertProfile
+
+Code: 20170
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| expert_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| expert_id | BigInt |
+| name | String |
+| family_name | String |
+| given_name | String |
+| follower_count | Int |
+| backers_count | Int |
+| description | String |
+| social_media | String |
+| risk_score | Numeric |
+| reputation_score | Numeric |
+| aum | Numeric |
+| followed | Boolean |
+| strategies_total | BigInt |
+| strategies |  |
+
+### UserGetUserProfile
+
+Code: 20180
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| name | String |
+| login_wallet | String |
+| joined_at | BigInt |
+| follower_count | Int |
+| description | String |
+| social_media | String |
+| followed_experts |  |
+| followed_strategies |  |
+| backed_strategies |  |
+
+### UserWhitelistWallet
+
+Code: 20190
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| blockchain | block_chain |
+| wallet_address | BlockchainAddress |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+| wallet_id | BigInt |
+
+### UserListWhitelistedWallets
+
+Code: 20200
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| wallet_id | Optional[BigInt] |
+| blockchain | Optional[block_chain] |
+| wallet_address | Optional[BlockchainAddress] |
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| wallets | DataTable[ListWalletsRow] |
+
+### UserUnwhitelistWallet
+
+Code: 20210
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| wallet_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserApplyBecomeExpert
+
+Code: 20220
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+| expert_id | BigInt |
+
+### ExpertCreateStrategy
+
+Code: 20250
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| name | String |
+| description | String |
+| strategy_thesis_url | String |
+| minimum_backing_amount_usd | Optional[Numeric] |
+| expert_fee | Numeric |
+| agreed_tos | Boolean |
+| wallet_address | BlockchainAddress |
+| wallet_blockchain | block_chain |
+| strategy_token_relative_to_usdc_ratio | Optional[BlockchainDecimal] |
+| initial_tokens | DataTable[UserCreateStrategyInitialTokenRow] |
+| audit_rules | Optional[] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+| strategy_id | BigInt |
+
+### ExpertUpdateStrategy
+
+Code: 20260
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| name | Optional[String] |
+| description | Optional[String] |
+| social_media | Optional[String] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### ExpertFreezeStrategy
+
+Code: 20265
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### ExpertAddStrategyWatchingWallet
+
+Code: 20270
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| blockchain | block_chain |
+| wallet_address | BlockchainAddress |
+| ratio | Numeric |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+| wallet_id | BigInt |
+
+### ExpertRemoveStrategyWatchingWallet
+
+Code: 20280
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| wallet_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserListStrategyWatchingWallets
+
+Code: 20290
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| wallets_total | BigInt |
+| wallets | DataTable[ListStrategyWatchingWalletsRow] |
+
+### UserListWalletActivityLedger
+
+Code: 20300
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| wallet_address | BlockchainAddress |
+| blockchain | block_chain |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| wallet_activities_total | BigInt |
+| wallet_activities | DataTable[ListWalletActivityLedgerRow] |
+
+### ExpertAddStrategyInitialTokenRatio
+
+Code: 20310
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| token_id | BigInt |
+| quantity | BlockchainDecimal |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+| token_id | BigInt |
+
+### ExpertRemoveStrategyInitialTokenRatio
+
+Code: 20320
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| token_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### UserListStrategyInitialTokenRatio
+
+Code: 20330
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| token_ratios_total | BigInt |
+| token_ratios | DataTable[ListStrategyInitialTokenRatioRow] |
+
+### ExpertListFollowers
+
+Code: 20340
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| followers_total | BigInt |
+| followers | DataTable[ExpertListFollowersRow] |
+
+### ExpertListBackers
+
+Code: 20350
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| backers_total | BigInt |
+| backers | DataTable[ExpertListBackersRow] |
+
+### ExpertListPublishedStrategies
+
+Code: 20355
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategies_total | BigInt |
+| strategies |  |
+
+### ExpertListUnpublishedStrategies
+
+Code: 20356
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategies_total | BigInt |
+| strategies |  |
+
+### UserGetDepositTokens
+
+Code: 20360
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| tokens | DataTable[UserGetDepositTokensRow] |
+
+### UserGetDepositAddresses
+
+Code: 20370
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| addresses | DataTable[UserGetDepositAddressesRow] |
+
+### UserListDepositWithdrawLedger
+
+Code: 20380
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| blockchain | Optional[block_chain] |
+| id_deposit | Optional[Boolean] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| ledger_total | BigInt |
+| ledger |  |
+
+### UserSubscribeDepositLedger
+
+Code: 20381
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| initial_data | Optional[BigInt] |
+| blockchain | Optional[block_chain] |
+| mock_data | Optional[Boolean] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### UserUnsubscribeDepositLedger
+
+Code: 20382
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### UserListStrategyWallets
+
+Code: 20390
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| blockchain | Optional[block_chain] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| wallets_total | BigInt |
+| wallets | DataTable[UserListStrategyWalletsRow] |
+
+### UserCreateStrategyWallet
+
+Code: 20391
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| blockchain | block_chain |
+| user_managed_wallet_address | Optional[BlockchainAddress] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| blockchain | block_chain |
+| address | BlockchainAddress |
+
+### UserListStrategyAuditRules
+
+Code: 20400
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| audit_rules | DataTable[UserListStrategyAuditRulesRow] |
+
+### UserAddStrategyAuditRule
+
+Code: 20410
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| rule_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### UserRemoveStrategyAuditRule
+
+Code: 20420
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| rule_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### UserGetEscrowAddressForStrategy
+
+Code: 20500
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| token_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| tokens | DataTable[UserAllowedEscrowTransferInfo] |
+
+### UserListDepositWithdrawBalances
+
+Code: 20510
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| balances | DataTable[UserListDepositWithdrawBalance] |
+
+### UserGetDepositWithdrawBalance
+
+Code: 20511
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| token_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| balance | BlockchainDecimal |
+
+### UserListEscrowTokenContractAddresses
+
+Code: 20520
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| blockchain | Optional[block_chain] |
+| is_stablecoin | Optional[Boolean] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| tokens_total | BigInt |
+| tokens | DataTable[UserListEscrowTokenContractAddressesRow] |
+
+### UserListStrategyTokenBalance
+
+Code: 20530
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| tokens_total | BigInt |
+| tokens | DataTable[UserListStrategyTokenBalanceRow] |
+
+### UserGetBackStrategyReviewDetail
+
+Code: 20540
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+| token_id | BigInt |
+| quantity | BlockchainDecimal |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_fee | BlockchainDecimal |
+| total_amount_to_back | BlockchainDecimal |
+| total_amount_to_back_after_fee | BlockchainDecimal |
+| user_strategy_wallets | DataTable[UserStrategyWallet] |
+| estimated_amount_of_strategy_tokens | BlockchainDecimal |
+| estimated_backed_token_ratios | DataTable[EstimatedBackedTokenRatios] |
+| strategy_pool_asset_balances | DataTable[StrategyPoolAssetBalancesRow] |
+
+### UserListUserBackStrategyAttempt
+
+Code: 20550
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+| token_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| total | BigInt |
+| back_attempts | DataTable[UserBackStrategyAttempt] |
+
+### UserListUserBackStrategyLog
+
+Code: 20560
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| attempt_id | BigInt |
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| back_logs_total | BigInt |
+| back_logs | DataTable[UserBackStrategyLog] |
+
+### UserGetSystemConfig
+
+Code: 20570
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| platform_fee | Numeric |
+
+### UserListUserStrategyBalance
+
+Code: 20580
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| balances_total | BigInt |
+| balances | DataTable[UserStrategyBalance] |

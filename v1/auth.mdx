@@ -1,0 +1,103 @@
+    ## Auth
+
+    ### Login
+
+    - Code: 10020
+
+    #### Parameters
+
+    | Name            | Type              |
+    |-----------------|-------------------|
+    | address         | BlockchainAddress |
+    | signature_text  | String            |
+    | signature       | String            |
+    | service         | EnumRef: service  |
+    | device_id       | String            |
+    | device_os       | String            |
+
+    #### Returns
+
+    | Name            | Type              |
+    |-----------------|-------------------|
+    | address         | BlockchainAddress |
+    | display_name    | String            |
+    | avatar          | Optional: String  |
+    | role            | EnumRef: role     |
+    | user_id         | BigInt            |
+    | user_token      | UUID              |
+    | admin_token     | UUID              |
+
+    ### Signup
+
+    - Code: 10010
+
+    #### Parameters
+
+    | Name            | Type              |
+    |-----------------|-------------------|
+    | address         | BlockchainAddress |
+    | signature_text  | String            |
+    | signature       | String            |
+    | email           | String            |
+    | phone           | String            |
+    | agreed_tos      | Boolean           |
+    | agreed_privacy  | Boolean           |
+    | username        | String            |
+
+    #### Returns
+
+    | Name            | Type              |
+    |-----------------|-------------------|
+    | address         | BlockchainAddress |
+    | user_id         | BigInt            |
+
+    ### Authorize
+
+    - Code: 10030
+
+    #### Parameters
+
+    | Name            | Type              |
+    |-----------------|-------------------|
+    | address         | BlockchainAddress |
+    | token           | UUID              |
+    | service         | EnumRef: service  |
+    | device_id       | String            |
+    | device_os       | String            |
+
+    #### Returns
+
+    | Name            | Type              |
+    |-----------------|-------------------|
+    | success         | Boolean           |
+
+    ### Logout
+
+    - Code: 10040
+
+    #### Parameters
+
+    None
+
+    #### Returns
+
+    None
+
+    ### ChangeLoginWallet
+
+    - Code: 10050
+
+    #### Parameters
+
+    | Name                | Type              |
+    |---------------------|-------------------|
+    | old_address         | BlockchainAddress |
+    | old_signature_text  | String            |
+    | old_signature       | String            |
+    | new_address         | BlockchainAddress |
+    | new_signature_text  | String            |
+    | new_signature       | String            |
+
+    #### Returns
+
+    None

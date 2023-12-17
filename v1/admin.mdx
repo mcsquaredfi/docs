@@ -1,0 +1,468 @@
+
+## admin
+
+### AdminListUsers
+
+Code: 30010
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | BigInt |
+| offset | BigInt |
+| user_id | Optional[BigInt] |
+| address | Optional[String] |
+| username | Optional[String] |
+| email | Optional[String] |
+| role | Optional[role] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| users_total | BigInt |
+| users | DataTable[ListUserRow] |
+
+### AdminSetUserRole
+
+Code: 30020
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| user_id | BigInt |
+| role | role |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminSetBlockUser
+
+Code: 30030
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| user_id | BigInt |
+| blocked | Boolean |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminListPendingExpertApplications
+
+Code: 30060
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| offset | Optional[BigInt] |
+| limit | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| users_total | BigInt |
+| users | DataTable[ListPendingExpertApplicationsRow] |
+
+### AdminApproveUserBecomeExpert
+
+Code: 30040
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| user_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### AdminRejectUserBecomeExpert
+
+Code: 30050
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| user_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### AdminGetSystemConfig
+
+Code: 30070
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| platform_fee | Numeric |
+| allow_domain_urls | String |
+| escrow_contract_address_ethereum | BlockchainAddress |
+| escrow_contract_address_goerli | BlockchainAddress |
+| escrow_contract_address_bsc | BlockchainAddress |
+| escrow_contract_address_bsc_testnet | BlockchainAddress |
+
+### AdminUpdateSystemConfig
+
+Code: 30080
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| platform_fee | Optional[Numeric] |
+| allow_domain_urls | Optional[String] |
+| escrow_contract_address_ethereum | Optional[BlockchainAddress] |
+| escrow_contract_address_goerli | Optional[BlockchainAddress] |
+| escrow_contract_address_bsc | Optional[BlockchainAddress] |
+| escrow_contract_address_bsc_testnet | Optional[BlockchainAddress] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### AdminListExperts
+
+Code: 30090
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| expert_id | Optional[BigInt] |
+| user_id | Optional[BigInt] |
+| user_public_id | Optional[BigInt] |
+| username | Optional[String] |
+| family_name | Optional[String] |
+| given_name | Optional[String] |
+| description | Optional[String] |
+| social_media | Optional[String] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| experts_total | BigInt |
+| experts |  |
+
+### AdminListBackers
+
+Code: 30100
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| offset | Optional[BigInt] |
+| limit | Optional[BigInt] |
+| user_id | Optional[BigInt] |
+| user_public_id | Optional[BigInt] |
+| username | Optional[String] |
+| family_name | Optional[String] |
+| given_name | Optional[String] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| backers_total | BigInt |
+| backers | DataTable[AdminListBackersRow] |
+
+### AdminListStrategies
+
+Code: 30110
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| offset | Optional[BigInt] |
+| limit | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+| strategy_name | Optional[String] |
+| expert_id | Optional[BigInt] |
+| expert_name | Optional[String] |
+| description | Optional[String] |
+| pending_approval | Optional[Boolean] |
+| approved | Optional[Boolean] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategies_total | BigInt |
+| strategies |  |
+
+### AdminApproveStrategy
+
+Code: 30120
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### AdminRefreshExpertWalletBalance
+
+Code: 30121
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### AdminRejectStrategy
+
+Code: 30130
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| strategy_id | BigInt |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
+
+### AdminAddAuditRule
+
+Code: 31002
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| rule_id | BigInt |
+| name | String |
+| description | String |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminNotifyEscrowLedgerChange
+
+Code: 32010
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| pkey_id | BigInt |
+| user_id | BigInt |
+| balance |  |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminSubscribeDepositLedger
+
+Code: 32011
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| initial_data | Optional[BigInt] |
+| blockchain | Optional[block_chain] |
+| mock_data | Optional[Boolean] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminUnsubscribeDepositLedger
+
+Code: 32012
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminAddEscrowTokenContractAddress
+
+Code: 32020
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| pkey_id | Optional[BigInt] |
+| symbol | String |
+| short_name | String |
+| description | String |
+| address | BlockchainAddress |
+| blockchain | block_chain |
+| is_stablecoin | Boolean |
+| is_wrapped | Boolean |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminAddEscrowContractAddress
+
+Code: 32030
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| pkey_id | BigInt |
+| address | BlockchainAddress |
+| blockchain | block_chain |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminListBackStrategyLedger
+
+Code: 32040
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| back_ledger_total | BigInt |
+| back_ledger | DataTable[AdminBackStrategyLedgerRow] |
+
+### AdminListExitStrategyLedger
+
+Code: 32041
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| strategy_id | Optional[BigInt] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| exit_ledger_total | BigInt |
+| exit_ledger | DataTable[AdminExitStrategyLedgerRow] |
+
+### AdminSetBlockchainLogger
+
+Code: 32050
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| enabled | Boolean |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+
+### AdminListEscrowTokenContractAddresses
+
+Code: 32060
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| limit | Optional[BigInt] |
+| offset | Optional[BigInt] |
+| symbol | Optional[String] |
+| address | Optional[BlockchainAddress] |
+| blockchain | Optional[block_chain] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
+| addresses_total | BigInt |
+| addresses | DataTable[AdminEscrowTokenContractAddressRow] |
+
+### AdminUpdateEscrowTokenContractAddress
+
+Code: 32080
+
+**Parameters:**
+
+| Name       | Type           |
+|------------|----------------|
+| pkey_id | BigInt |
+| symbol | Optional[String] |
+| short_name | Optional[String] |
+| description | Optional[String] |
+| is_stablecoin | Optional[Boolean] |
+| is_wrapped | Optional[Boolean] |
+
+**Returns:**
+
+| Name       | Type           |
+|------------|----------------|
