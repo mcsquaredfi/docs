@@ -1,103 +1,106 @@
-    ## Auth
+## auth
 
-    ### Login
+### Login
 
-    - Code: 10020
+Code: 10020
 
-    #### Parameters
+**Parameters:**
 
-    | Name            | Type              |
-    |-----------------|-------------------|
-    | address         | BlockchainAddress |
-    | signature_text  | String            |
-    | signature       | String            |
-    | service         | EnumRef: service  |
-    | device_id       | String            |
-    | device_os       | String            |
+| Name       | Type           |
+|------------|----------------|
+| address | BlockchainAddress |
+| signature_text | String |
+| signature | String |
+| service | service |
+| device_id | String |
+| device_os | String |
 
-    #### Returns
+**Returns:**
 
-    | Name            | Type              |
-    |-----------------|-------------------|
-    | address         | BlockchainAddress |
-    | display_name    | String            |
-    | avatar          | Optional: String  |
-    | role            | EnumRef: role     |
-    | user_id         | BigInt            |
-    | user_token      | UUID              |
-    | admin_token     | UUID              |
+| Name       | Type           |
+|------------|----------------|
+| address | BlockchainAddress |
+| display_name | String |
+| avatar | Optional[String] |
+| role | role |
+| user_id | BigInt |
+| user_token | UUID |
+| admin_token | UUID |
 
-    ### Signup
+### Signup
 
-    - Code: 10010
+Code: 10010
 
-    #### Parameters
+**Parameters:**
 
-    | Name            | Type              |
-    |-----------------|-------------------|
-    | address         | BlockchainAddress |
-    | signature_text  | String            |
-    | signature       | String            |
-    | email           | String            |
-    | phone           | String            |
-    | agreed_tos      | Boolean           |
-    | agreed_privacy  | Boolean           |
-    | username        | String            |
+| Name       | Type           |
+|------------|----------------|
+| address | BlockchainAddress |
+| signature_text | String |
+| signature | String |
+| email | String |
+| phone | String |
+| agreed_tos | Boolean |
+| agreed_privacy | Boolean |
+| username | String |
 
-    #### Returns
+**Returns:**
 
-    | Name            | Type              |
-    |-----------------|-------------------|
-    | address         | BlockchainAddress |
-    | user_id         | BigInt            |
+| Name       | Type           |
+|------------|----------------|
+| address | BlockchainAddress |
+| user_id | BigInt |
 
-    ### Authorize
+### Authorize
 
-    - Code: 10030
+Code: 10030
 
-    #### Parameters
+**Parameters:**
 
-    | Name            | Type              |
-    |-----------------|-------------------|
-    | address         | BlockchainAddress |
-    | token           | UUID              |
-    | service         | EnumRef: service  |
-    | device_id       | String            |
-    | device_os       | String            |
+| Name       | Type           |
+|------------|----------------|
+| address | BlockchainAddress |
+| token | UUID |
+| service | service |
+| device_id | String |
+| device_os | String |
 
-    #### Returns
+**Returns:**
 
-    | Name            | Type              |
-    |-----------------|-------------------|
-    | success         | Boolean           |
+| Name       | Type           |
+|------------|----------------|
+| success | Boolean |
 
-    ### Logout
+### Logout
 
-    - Code: 10040
+Code: 10040
 
-    #### Parameters
+**Parameters:**
 
-    None
+| Name       | Type           |
+|------------|----------------|
 
-    #### Returns
+**Returns:**
 
-    None
+| Name       | Type           |
+|------------|----------------|
 
-    ### ChangeLoginWallet
+### ChangeLoginWallet
 
-    - Code: 10050
+Code: 10050
 
-    #### Parameters
+**Parameters:**
 
-    | Name                | Type              |
-    |---------------------|-------------------|
-    | old_address         | BlockchainAddress |
-    | old_signature_text  | String            |
-    | old_signature       | String            |
-    | new_address         | BlockchainAddress |
-    | new_signature_text  | String            |
-    | new_signature       | String            |
+| Name       | Type           |
+|------------|----------------|
+| old_address | BlockchainAddress |
+| old_signature_text | String |
+| old_signature | String |
+| new_address | BlockchainAddress |
+| new_signature_text | String |
+| new_signature | String |
 
-    #### Returns
+**Returns:**
 
-    None
+| Name       | Type           |
+|------------|----------------|
