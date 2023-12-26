@@ -54,20 +54,37 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
       "group": "V1",
       "pages": [
         "v1/introduction",
         "v1/auth",
         "v1/user",
         "v1/admin"
+      ]
+    },
+    {
+      "group": "V2",
+      "pages": [
+        "v2/introduction",
+        "v2/raw",
+        "v2/translation",
+        "v2/stats",
+        "v2/trade",
+        "v2/users"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/mcsquaredfi",
+    "github": "https://github.com/mcsquaredfi"
+  },
+  "old": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "introduction",
+        "quickstart",
+        "development"
       ]
     },
     {
@@ -88,9 +105,5 @@
         "api-reference/endpoint/delete"
       ]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mcsquaredfi",
-    "github": "https://github.com/mcsquaredfi"
-  }
+  ]
 }
